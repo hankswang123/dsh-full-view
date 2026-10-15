@@ -1,0 +1,45 @@
+{
+  "name": "dsh-full-view",
+  "version": "1.0.0",
+  "description": "Adds a Full View button to each assistant reply for comfortable full-screen reading.",
+  "type": "module",
+  "license": "MIT",
+  "author": "hankswang123",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hankswang123/dsh-full-view.git"
+  },
+  "homepage": "https://github.com/hankswang123/dsh-full-view#readme",
+  "bugs": "https://github.com/hankswang123/dsh-full-view/issues",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "full-view",
+    "overlay",
+    "reader"
+  ],
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
+    }
+  }
+}
